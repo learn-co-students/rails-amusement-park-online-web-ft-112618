@@ -1,0 +1,11 @@
+<ul>
+<% @attractions.each do |attraction| %>
+  <li>
+    <% if current_user.admin %>
+      <%= render partial: 'admin', locals: { attraction: attraction } %>
+    <% else %>
+      <%= render partial: 'user', locals: { attraction: attraction } %>
+    <% end %>
+  </li>
+<% end %>
+</ul>

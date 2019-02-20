@@ -1,0 +1,6 @@
+<%= render partial: 'admin', locals: { attraction: attraction } if current_user.admin %>
+<%= form_for @attraction, url: user_path(current_user), html: { method: "patch" } do |f| %>
+  <%= f.hidden_field :id %>
+  <%= f.button "Go on this ride" %>
+<% end %>
+<%= link_to "Go on this ride", user_path(current_user), method: "update" %>
