@@ -1,3 +1,4 @@
+<%= link_to "New Attraction", new_attraction_path if current_user.admin %>
 <ul>
 <% @attractions.each do |attraction| %>
   <li>
