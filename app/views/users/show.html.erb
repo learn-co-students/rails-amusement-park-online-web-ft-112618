@@ -1,0 +1,20 @@
+<br>
+<% if !session[:message].nil? %>
+<div class="message">
+    <%= session[:message] %>
+</div><br>
+<% end %>
+<div class="card">
+  <% if @user.admin %>
+    <strong><%= "ADMIN" %></strong><br><br>
+  <% end %>
+  Name: <%= @user.name %><br>
+  Mood: <%= @user.mood %><br>
+  Tickets: <%= @user.tickets %><br>
+  Height: <%= @user.height %><br>
+  <div align=center><br>
+    <button><%= link_to "See attractions", attractions_path %></button>
+    <button><%= link_to "Log Out", logout_path %></button>
+  </div>
+
+</div>
