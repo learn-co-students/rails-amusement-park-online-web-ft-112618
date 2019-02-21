@@ -1,0 +1,9 @@
+<br><div class="card">
+<%= form_for @user, :url => url_for(:action => "create") do |f| %>
+  <%= f.label 'Your name:' %><br>
+  <%= f.collection_select :name, @users, :name, :name %><br><br>
+  <%= f.label 'Your password:' %><br>
+  <%= f.password_field :password %><br><br>
+  <%= f.submit "Sign In" %>
+<% end %>
+</div>
