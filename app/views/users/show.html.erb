@@ -1,0 +1,15 @@
+<% if @user.admin == true %>
+  <%= render partial: "admin", locals: {user: @user} %>
+<% else %>
+  <h1>Welcome <%= @user.name %> </h1>
+  <h3>Mood: <%= @user.mood %> </h3>
+  <h3>Tickets: <%= @user.tickets %> </h3>
+  <h3>Height: <%= @user.height %> </h3>
+  <h3>Nausea: <%= @user.nausea %> </h3>
+<% end %>
+
+<%= link_to "See attractions", attractions_path %>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>

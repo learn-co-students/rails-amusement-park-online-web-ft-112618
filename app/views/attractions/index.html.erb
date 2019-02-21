@@ -1,0 +1,10 @@
+<h1>Attractions</h1>
+<% if @user.admin? %>
+  <%= render "admin" %>
+<% else %>
+  <ul>
+    <% @attractions.each do |attraction| %>
+    <li><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></li>
+    <% end %>
+  </ul>
+<% end %>
