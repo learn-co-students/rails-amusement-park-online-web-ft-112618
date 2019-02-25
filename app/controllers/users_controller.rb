@@ -19,7 +19,6 @@ class UsersController < ApplicationController
       else
         render :new }
       end
-    end
   end
 
   def edit
@@ -31,7 +30,6 @@ class UsersController < ApplicationController
       else
         render :edit }
       end
-    end
   end
 
   private

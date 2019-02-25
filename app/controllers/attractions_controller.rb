@@ -24,7 +24,6 @@ class AttractionsController < ApplicationController
       else
        render :new }
       end
-    end
   end
 
   def update
@@ -34,14 +33,11 @@ class AttractionsController < ApplicationController
       else
         render :edit 
       end
-    end
   end
 
   def destroy
     @attraction.destroy
- 
     redirect_to attractions_url, notice: 'Attraction was successfully destroyed.' 
-    end
   end
 
   private
