@@ -39,7 +39,7 @@ class Ride < ActiveRecord::Base
   end
 
   def ticket_issue
-    "You do not have enough tickets the #{self.attraction.name}."
+    "You do not have enough tickets to ride the #{self.attraction.name}."
   end
 
   def height_issue

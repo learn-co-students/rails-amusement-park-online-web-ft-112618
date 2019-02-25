@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    respond_to do |format|
+  
       if @user.save
         session[:user_id] = @user.id
         redirect_to user_path(@user), notice: "Welcome to the theme park!" 
@@ -26,7 +26,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
       if @user.update(user_params)
         redirect_to @user, notice: 'User was successfully updated.' }
       else
