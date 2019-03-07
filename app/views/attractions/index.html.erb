@@ -1,0 +1,22 @@
+
+<div align=center>
+  <br><% if current_user.admin %>
+    <button><%= link_to "New Attraction", new_attraction_path %></button>
+  <% end %>
+  <button><%= link_to "User Page", user_path(current_user[:id]) %></button>
+</div><br>
+
+ <% @attractions.each do |attraction| %>
+<div class="card">
+  Name: <%= attraction.name %><br>
+  Min Height: <%= attraction.min_height %><br>
+  Nausea: <%= attraction.nausea_rating %><br>
+  Happiness: <%= attraction.happiness_rating %><br>
+  Tickets: <%= attraction.tickets %><br><br>
+  <% if current_user.admin %>
+  <button><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></button><br><br>
+  <% else %>
+  <button><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></button><br><br>
+  <% end %>
+  </div><br>
+<% end %>
