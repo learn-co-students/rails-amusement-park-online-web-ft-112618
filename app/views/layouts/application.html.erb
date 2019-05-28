@@ -29,6 +29,10 @@
 
     <!-- content -->
     <div class="container"  role="main">
+      <% if flash.notice %>
+        <%= flash.notice %>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
